@@ -1,19 +1,29 @@
 import Layout from "../../components/Layout";
 import fetch from 'isomorphic-unfetch';
 
+const containerStyles = {
+	backgroundColor: 'gainsboro',
+	padding: 20,
+	display: 'flex',
+	flexDirection: 'column',
+	alignItems: 'center',
+};
+
+const upperFirst = (string) => {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const Post = props => (
 	<Layout>
-		<h1>Name: {props.pokemon.name}</h1>
-		<img src={props.pokemon.sprites.front_default} alt="" />
-		<p>Height: {props.pokemon.height} decimetres.</p>
-		<p>Weight: {props.pokemon.weight} hectograms.</p>
-		<p>Category: {props.pokemon.category}</p>
-		<p>Type(s): {props.pokemon.types.map(type => (
-			<span>{type.type.name} </span>
-		))}</p>
-
-		{/*<p>{props.show.summary.replace(/<[/]?[pb]>/g, '')}</p>*/}
-		{/*{props.show.image ? <img src={props.show.image.medium} /> : null}*/}
+		<div style={containerStyles}>
+			<h1>Name: {upperFirst(props.pokemon.name)}</h1>
+			<img src={props.pokemon.sprites.front_default} alt="" />
+			<p>Height: {props.pokemon.height} decimetres.</p>
+			<p>Weight: {props.pokemon.weight} hectograms.</p>
+			<p>Type(s): {props.pokemon.types.map(type => (
+				<span>{upperFirst(type.type.name)} </span>
+			))}</p>
+		</div>
 	</Layout>
 );
 

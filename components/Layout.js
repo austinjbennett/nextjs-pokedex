@@ -5,12 +5,18 @@ const layoutStyles = {
 	padding: 20,
 	border: `.1rem solid #DDD`,
 };
+const containerStyles = {
+	display: 'flex',
+	justifyContent: 'center',
+};
 
 export default function Layout(props) {
 	return (
 		<div style={layoutStyles}>
 			<Header/>
-			{props.children}
+			<div style={containerStyles}>
+				{props.children}
+			</div>
 		</div>
 	)
 }

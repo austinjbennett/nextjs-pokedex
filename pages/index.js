@@ -30,7 +30,7 @@ Index.getInitialProps = async function() {
 	// 	pokemons.push(...data.results);
 	// 	next = data.next;
 	// }
-	const pokemons = pokemonList.splice(0, 30);
+	const pokemons = pokemonList.slice(0, 30);
 	// console.log('pokemons:', pokemons);
 	return { pokemons };
 };

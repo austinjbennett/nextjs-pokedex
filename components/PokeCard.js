@@ -17,6 +17,10 @@ const linkStyles = {
 	color: 'darkRed',
 };
 
+const upperFirst = (string) => {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const PokeCard = props => {
 	const number = props.url.split('/pokemon/')[1].match('\\b\\d+\\b')[0];
 	return (
@@ -24,7 +28,7 @@ const PokeCard = props => {
 			<Link href='/pokemon/[name]' as={`/pokemon/${props.name}`}>
 				<a style={linkStyles}>
 					<img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png`} alt={props.name} />
-					<span>{props.name}</span>
+					<span>{upperFirst(props.name)}</span>
 				</a>
 			</Link>
 			<style jsx>{`
