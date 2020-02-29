@@ -22,16 +22,23 @@ const Index = props => {
 };
 
 Index.getInitialProps = async function() {
+	/* This first block build an array of all pokemon from the pokeapi */
 	// const pokemons = [];
-	// let next = 'https://pokeapi.co/api/v2/pokemon?limit=20';
+	// let next = 'https://pokeapi.co/api/v2/pokemon';
 	// while (next) {
 	// 	const res = await fetch(next);
 	// 	const data = await res.json();
 	// 	pokemons.push(...data.results);
 	// 	next = data.next;
 	// }
-	const pokemons = pokemonList.slice(0, 30);
-	// console.log('pokemons:', pokemons);
+	/* End dynamic(api built) pokemon list */
+
+	// Only show first 30 pokemon
+	// const pokemons = pokemonList.slice(0, 30);
+
+	// Show all pokemon from internal json list of pokemon to avoid tons of api calls
+	const pokemons = pokemonList;
+
 	return { pokemons };
 };
 

@@ -42,10 +42,10 @@ export default function Header() {
 			<nav style={navStyles}>
 				<div>
 					<Link href="/index">
-						<a style={linkStyles}>Home Page</a>
+						<a style={linkStyles}>All Pokémon</a>
 					</Link>
 					<Link href='/pokemon/[name]' as={`/pokemon/${randomNum}`}>
-						<a style={linkStyles}>Random Pokemon</a>
+						<a style={linkStyles}>Random Pokémon</a>
 					</Link>
 					<style jsx>{`
 						a {
