@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/DGM3780/nextjs-skaduusch#readme",
   "dependencies": {
+    "@material-ui/core": "^4.9.4",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.2.2",
     "react": "^16.13.0",
